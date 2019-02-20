@@ -1,18 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Dear Fussball</h1>
+    <div class="players">
+      <RegisterNewPlayer />
+      <Players />
+    </div>
+    <div class="leagues">
+      <CreateLeague />
+      <Leagues />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RegisterNewPlayer from './components/partials/RegisterNewPlayer.vue';
+import Players from './components/partials/Players.vue';
+import CreateLeague from './components/partials/CreateLeague.vue';
+import Leagues from './components/partials/Leagues.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    RegisterNewPlayer,
+    Players,
+    CreateLeague,
+    Leagues,
+  },
 }
 </script>
 
