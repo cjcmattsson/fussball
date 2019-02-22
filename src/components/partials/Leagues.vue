@@ -3,7 +3,7 @@
     <div class="league" v-for="league in leagues">
       <h2>{{league.name}}</h2>
       <p v-for="player in league.participants">
-        {{player.name}}
+        {{player[1].name}}
       </p>
     </div>
   </div>
