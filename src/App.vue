@@ -4,8 +4,6 @@
     <nav>
       <router-link to="/">Hem</router-link>
       <router-link to="/leagues">Ligor</router-link>
-      <router-link to="/create-league">Skapa liga</router-link>
-      <router-link to="/register-player">Ny spelare</router-link>
       <router-link to="/players">Alla spelare</router-link>
     </nav>
     <router-view></router-view>

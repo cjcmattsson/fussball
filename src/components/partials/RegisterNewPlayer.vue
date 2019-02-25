@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="register">
+  <div class="register-new-player">
     <input type="text" name="" value="" v-on:keyup="getName">
     <button type="button" name="button" v-on:click="appPlayer">Lägg till spelare</button>
   </div>

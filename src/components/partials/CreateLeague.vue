@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="register">
+  <div class="create-league">
     <input type="text" name="" value="" v-on:keyup="getName">
     <div class="player" v-for="player in players">
       <label :for="player[1].name">{{player[1].name}}</label>

@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="leagues">
+    <CreateLeague></CreateLeague>
     <div class="league" v-for="league in leagues">
       <router-link :to="`/leagues/${league.name}`">
         <h2>{{league.name}}</h2>
@@ -8,13 +9,18 @@
         {{player[1].name}}
       </p>
     </div>
+
   </div>
 </template>
 
 <script>
 import firebase from 'firebase';
+import CreateLeague from './../partials/CreateLeague.vue';
 export default {
   name: "Leagues",
+  components: {
+    CreateLeague,
+  },
   data() {
     return {
       leagues : null,
