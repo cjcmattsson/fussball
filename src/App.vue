@@ -1,31 +1,21 @@
 <template>
   <div id="app">
-    <h1>Dear Fussball</h1>
-    <div class="players">
-      <RegisterNewPlayer />
-      <Players />
-    </div>
-    <div class="leagues">
-      <CreateLeague />
-      <Leagues />
-    </div>
+    <h1>Dear Fussbal League</h1>
+    <nav>
+      <router-link to="/">Hem</router-link>
+      <router-link to="/leagues">Ligor</router-link>
+      <router-link to="/create-league">Skapa liga</router-link>
+      <router-link to="/register-player">Ny spelare</router-link>
+      <router-link to="/players">Alla spelare</router-link>
+    </nav>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import RegisterNewPlayer from './components/partials/RegisterNewPlayer.vue';
-import Players from './components/partials/Players.vue';
-import CreateLeague from './components/partials/CreateLeague.vue';
-import Leagues from './components/partials/Leagues.vue';
 
 export default {
   name: 'app',
-  components: {
-    RegisterNewPlayer,
-    Players,
-    CreateLeague,
-    Leagues,
-  },
 }
 </script>
 

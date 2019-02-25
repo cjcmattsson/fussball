@@ -1,7 +1,9 @@
 <template lang="html">
   <div class="leagues">
     <div class="league" v-for="league in leagues">
-      <h2>{{league.name}}</h2>
+      <router-link :to="`/leagues/${league.name}`">
+        <h2>{{league.name}}</h2>
+      </router-link>
       <p v-for="player in league.participants">
         {{player[1].name}}
       </p>
