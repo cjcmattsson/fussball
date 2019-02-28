@@ -25,7 +25,6 @@ export default {
     var ref = firebase.database().ref();
     ref.on("value", (snapshot) => {
       if (snapshot.val() != null) {
-        // console.log(Object.entries(snapshot.val().players));
         this.players = Object.entries(snapshot.val().players);
       }
     }, (error) => {
@@ -50,6 +49,7 @@ export default {
         const league = {
           name: this.leagueName,
           participants: this.participants,
+          matches: [],
         }
         leagues.push(league);
       } else {

@@ -19,7 +19,10 @@ export default {
       const database = firebase.database();
       const players = database.ref('players');
       const player = {
-        name: this.player
+        name: this.player,
+        matches: 0,
+        wins: 0,
+        losses: 0,
       }
       players.push(player);
     },
