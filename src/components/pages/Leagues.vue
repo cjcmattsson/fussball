@@ -2,7 +2,7 @@
   <div class="leagues">
     <CreateLeague></CreateLeague>
     <div class="league" v-for="league in leagues">
-      <router-link :to="`/leagues/${league.name}`">
+      <router-link :to="{path: `/leagues/${league.name}`}">
         <h2>{{league.name}}</h2>
       </router-link>
       <p v-for="player in league.participants">
@@ -15,6 +15,7 @@
 
 <script>
 import firebase from 'firebase';
+import { EventBus } from '../../assets/utils/event-bus.js';
 import CreateLeague from './../partials/CreateLeague.vue';
 export default {
   name: "Leagues",
@@ -31,7 +32,7 @@ export default {
     ref.on("value", (snapshot) => {
       if (snapshot.val() != null) {
         this.leagues = Object.values(snapshot.val().leagues);
-        console.log(this.leagues);
+        EventBus.$emit('leagues', this.leagues);
       }
     }, (error) => {
       console.log("Error: " + error.code);
