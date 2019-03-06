@@ -47,19 +47,18 @@ export default {
     createLeague() {
       const database = firebase.database();
       const leagues = database.ref('leagues');
-      if(this.existingLeagues.some(league => league.name.toLowerCase() === this.leagueName.toLowerCase())) {
-        alert("That name is taken bro");
-      } else if (this.participants.length > 0 && this.leagueName !== null) {
+      // if(existingLeagues != undefined && this.existingLeagues.some(league => league.name != undefined && league.name.toLowerCase() === this.leagueName.toLowerCase())) {
+      //   alert("That name is taken bro");
+      // } else if (this.participants.length > 0 && this.leagueName !== null) {
         const league = {
           name: this.leagueName,
           participants: this.participants,
           matches: [],
         }
         leagues.push(league);
-        this
-      } else {
-        alert("You gotta invite some people and give the league a name dawg!")
-      }
+      // } else {
+      //   alert("You gotta invite some people and give the league a name dawg!")
+      // }
     },
     getName(e) {
       this.leagueName = e.target.value;

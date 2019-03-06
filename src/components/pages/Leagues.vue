@@ -2,10 +2,10 @@
   <div class="leagues">
     <CreateLeague></CreateLeague>
     <div class="league" v-for="league in leagues">
-      <router-link :to="{path: `/leagues/${league.name}`}">
-        <h2>{{league.name}}</h2>
+      <router-link :to="{path: `/leagues/${league[1].name}`}">
+        <h2>{{league[1].name}}</h2>
       </router-link>
-      <p v-for="player in league.participants">
+      <p v-for="player in league[1].participants">
         {{player[1].name}}
       </p>
     </div>
@@ -31,7 +31,7 @@ export default {
     var ref = firebase.database().ref();
     ref.on("value", (snapshot) => {
       if (snapshot.val() != null) {
-        this.leagues = Object.values(snapshot.val().leagues);
+        this.leagues = Object.entries(snapshot.val().leagues);
         EventBus.$emit('leagues', this.leagues);
       }
     }, (error) => {
