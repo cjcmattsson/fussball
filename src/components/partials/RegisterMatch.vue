@@ -22,7 +22,7 @@
       </select>
 
     </div>
-    <h1 @click="registerMatch">REGGA MATCH</h1>
+    <button @click="registerMatch">REGGA MATCH</button>
   </div>
 </template>
 
